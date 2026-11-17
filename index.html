@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <meta name="description" content="RETER explores AI-assisted road incident detection and human-verified emergency response.">
+  <title>RETER — Road Emergency to Emergency Response</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --navy: #071426; --panel: #10223a; --red: #f04444;
+      --text: #f4f7fb; --muted: #b8c5d6; --line: #263c58;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: radial-gradient(ellipse at top, #142c49 0, var(--navy) 55%);
+      color: var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+    .wrap { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+    .hero { padding: 26px 0 18px; }
+    .banner { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 16px; }
+    .intro { text-align: center; padding: 24px 0 34px; }
+    h1 { margin: 0; font-size: clamp(2.2rem, 7vw, 4rem); letter-spacing: .08em; }
+    .tagline { margin: 5px 0 14px; color: #ff7777; font-weight: 700; letter-spacing: .12em; }
+    .lead { max-width: 780px; margin: 0 auto; color: var(--muted); font-size: 1.08rem; }
+    .chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+    .chip { border: 1px solid var(--line); background: #10223a; border-radius: 999px; padding: 6px 12px; color: #dce8f6; font-size: .88rem; }
+    main { padding-bottom: 48px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    section { background: rgba(16,34,58,.88); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+    section.wide { grid-column: 1 / -1; }
+    h2 { margin: 0 0 12px; font-size: 1.25rem; }
+    p { margin: 0 0 10px; }
+    ul, ol { margin: 8px 0 0; padding-left: 22px; }
+    li { margin: 7px 0; color: #d5dfeb; }
+    .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; margin-top: 16px; }
+    .step { background: #0a192d; border: 1px solid #2a4261; border-radius: 10px; padding: 13px 9px; text-align: center; font-weight: 650; }
+    .step span { display: block; color: var(--muted); font-size: .82rem; font-weight: 400; margin-top: 5px; }
+    .notice { border-left: 4px solid var(--red); padding: 12px 15px; background: #211d2a; border-radius: 7px; color: #f7e9e9; }
+    .status { color: #ffb0b0; font-weight: 700; }
+    footer { border-top: 1px solid var(--line); color: var(--muted); padding: 20px 0 32px; text-align: center; font-size: .9rem; }
+    a { color: #ff8585; }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      section.wide { grid-column: auto; }
+      .flow { grid-template-columns: 1fr; }
+      .step { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap hero">
+    <img class="banner" src="assets/reter-banner.png" alt="RETER road emergency response project banner">
+    <div class="intro">
+      <h1>RETER</h1>
+      <p class="tagline">DETECT · VERIFY · ALERT · RESPOND</p>
+      <p class="lead">An open-source concept exploring AI-assisted road-incident detection and coordinated emergency response using authorized CCTV infrastructure.</p>
+      <div class="chips">
+        <span class="chip">Open-source concept</span>
+        <span class="chip">Human verification</span>
+        <span class="chip">Early stage</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <section>
+        <h2>The goal</h2>
+        <p>Explore ways to reduce the time between a road incident being noticed and appropriate emergency responders being notified, while keeping human operators in control.</p>
+      </section>
+      <section>
+        <h2>Project status</h2>
+        <p class="status">Early-stage concept and documentation</p>
+        <p>This site describes the intended workflow. It is not a working accident-detection or emergency-dispatch system.</p>
+      </section>
+
+      <section class="wide">
+        <h2>Proposed workflow</h2>
+        <div class="flow">
+          <div class="step">CCTV capture<span>Registered, authorized camera</span></div>
+          <div class="step">AI detection<span>Flags a possible incident</span></div>
+          <div class="step">Two-operator review<span>Required for serious incidents</span></div>
+          <div class="step">Emergency alert<span>Only after required approvals</span></div>
+          <div class="step">Response tracking<span>Acknowledgement to closure</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Safety by design</h2>
+        <ul>
+          <li>AI predictions do not dispatch emergency services by themselves.</li>
+          <li>Serious incidents require two different authorized operators to approve.</li>
+          <li>Disagreement or timeout triggers escalation, never automatic approval.</li>
+          <li>Use only authorized camera feeds and emergency-service integrations.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Planned components</h2>
+        <ul>
+          <li>Camera registry and fixed-location mapping</li>
+          <li>Incident review dashboard</li>
+          <li>Role-based access and audit logs</li>
+          <li>Authorized ambulance and notification integrations</li>
+        </ul>
+      </section>
+
+      <section class="wide">
+        <h2>Roadmap</h2>
+        <ol>
+          <li>Define requirements with road-safety and emergency-response stakeholders.</li>
+          <li>Design camera registry, incident records, and operator permissions.</li>
+          <li>Build the incident review and dual-approval workflow.</li>
+          <li>Research and evaluate accident-detection models.</li>
+          <li>Integrate approved response partners and test in a controlled environment.</li>
+        </ol>
+      </section>
+
+      <section class="wide">
+        <h2>Responsible use</h2>
+        <p class="notice">RETER is not an emergency service. In an actual emergency, contact local emergency services directly.</p>
+        <p style="margin-top:12px">Any real deployment must comply with applicable privacy and data-protection laws, use authorized CCTV feeds, protect evidence, validate model performance, and verify message delivery and responder status rather than assuming dispatch occurred.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="wrap">RETER — Road Emergency to Emergency Response · Open-source project concept</footer>
+</body>
+</html>
